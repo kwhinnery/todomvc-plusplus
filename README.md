@@ -46,15 +46,18 @@ Next, create the development and test databases:
     createdb todos
     createdb todos-test
 
-And finally, apply the database migrations:
+Apply the database migrations:
 
     sequelize db:migrate
+    
+Copy over static assets:
+
+    grunt collect_static
     
 ### Running the application
 
 To run the application in development mode:
 
-    grunt collect_static
     grunt
 
 To run the application simulating production settings:
