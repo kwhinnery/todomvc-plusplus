@@ -70,9 +70,6 @@ module.exports = function(grunt) {
       // Execute mocha tests
       test: {
         command: 'npm test'
-      },
-      migrate: {
-        command: 'npm prestart'
       }
     },
 
