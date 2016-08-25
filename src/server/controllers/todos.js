@@ -24,6 +24,7 @@ exports.update = (request, response) => {
   Todo.findById(request.param('id')).then((todo) => {
     if (!todo) return response.status(404);
     todo.title = request.body.title;
+    todo.completed = !todo.completed;
     return todo.save();
   }).then((todo) => {
     response.send(todo);
@@ -35,7 +36,8 @@ exports.update = (request, response) => {
 // Create a TODO
 exports.create = (request, response) => {
   Todo.create({
-    title: request.body.title
+    title: request.body.title,
+    completed: false
   }).then((todo) => {
     response.send(todo);
   }).catch((error) => {
