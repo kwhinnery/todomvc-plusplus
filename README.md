@@ -22,10 +22,9 @@ to install the application's dependencies. Do this with:
 
     npm install
 
-For development (and local verification of production commands), you'll also 
-want to install the following modules globally:
+For development you'll probably want to install the following modules globally:
 
-    npm install -g pm2 grunt-cli sequelize-cli
+    npm install -g grunt-cli sequelize-cli
 
 ### Setting up the database
 
