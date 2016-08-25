@@ -63,15 +63,6 @@ module.exports = function(grunt) {
       // Execute mocha tests
       test: {
         command: 'npm test'
-      },
-
-      // drop and recreate dev database (assumes Postgres Homebrew install)
-      nukedb: {
-        command: [
-          'dropdb todos',
-          'createdb todos',
-          'npm run-script migrate'
-        ].join(' && ')
       }
     },
 
