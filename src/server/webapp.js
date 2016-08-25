@@ -4,12 +4,16 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./controllers/routes');
+const morgan = require('morgan');
 
 let app = express();
 
 // Configure view engine and views directory
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// Configure logging middleware
+app.use(morgan('combined'));
 
 // Configure middleware
 app.use(bodyParser.urlencoded({ extended: false }));
