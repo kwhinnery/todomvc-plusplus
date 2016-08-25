@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     // Make package info available to tasks
     pkg: grunt.file.readJSON('package.json'),
 
+
     // Browserify front-end modules
     browserify: {
       options: { 
@@ -13,6 +14,17 @@ module.exports = function(grunt) {
       js: {
         src: ['src/browser/js/app.js'],
         dest: 'public/app.js'
+      }
+    },
+
+    // Uglify browserify bundle
+    uglify: {
+      options: {
+        sourceMap: false
+      },
+      js: {
+        src: ['public/app.js'],
+        dest: 'public/app.min.js'
       }
     },
 
@@ -85,13 +97,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default is running the local development server
   grunt.registerTask('default', ['sass:dev', 'browserify', 'concurrent:dev']);
 
   // Build production assets
   grunt.registerTask('collect_static', 
-    ['init_static', 'sass:dist', 'browserify']);
+    ['init_static', 'sass:dist', 'browserify', 'uglify']);
 
   // Custom tasks
   grunt.loadTasks('bin/tasks');
