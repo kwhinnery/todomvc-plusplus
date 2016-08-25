@@ -99,7 +99,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['sass:dev', 'browserify', 'concurrent:dev']);
 
   // Build production assets
-  grunt.registerTask('dist', ['sass:dist', 'browserify']);
+  grunt.registerTask('collect_static', ['sass:dist', 'browserify']);
 
   // Custom tasks
   grunt.loadTasks('bin/tasks');
