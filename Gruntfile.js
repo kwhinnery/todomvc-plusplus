@@ -16,6 +16,17 @@ module.exports = function(grunt) {
       }
     },
 
+    // Uglify browserify bundle
+    uglify: {
+      options: {
+        sourceMap: false
+      },
+      js: {
+        src: ['public/app.js'],
+        dest: 'public/app.min.js'
+      }
+    },
+
     // Compile Sass stylesheets
     sass: {
       dev: {
@@ -85,13 +96,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default is running the local development server
   grunt.registerTask('default', ['sass:dev', 'browserify', 'concurrent:dev']);
 
   // Build production assets
   grunt.registerTask('collect_static', 
-    ['init_static', 'sass:dist', 'browserify']);
+    ['init_static', 'sass:dist', 'browserify', 'uglify']);
 
   // Custom tasks
   grunt.loadTasks('bin/tasks');
