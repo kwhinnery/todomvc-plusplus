@@ -12,6 +12,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Configure middleware
+app.use(function (req, res, next) {
+  res.removeHeader("X-Powered-By");
+  next();
+});
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Static file serving happens everywhere but in production
