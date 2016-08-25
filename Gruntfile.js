@@ -96,7 +96,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-
   // Default is running the local development server
   grunt.registerTask('default', ['sass:dev', 'browserify', 'concurrent:dev']);
 
