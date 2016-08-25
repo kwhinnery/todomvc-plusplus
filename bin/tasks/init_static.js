@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     var publicPath = path.resolve(__dirname, '..', '..', 'public');
     var staticPath = path.resolve(__dirname, '..', '..', 'src', 'browser', 
       'static');
-    fs.rmdirSync(publicPath);
+    fs.removeSync(publicPath);
     fs.mkdirSync(publicPath);
     fs.copySync(staticPath, publicPath);
     log(`Static asset directory initialized at ${publicPath}`);
