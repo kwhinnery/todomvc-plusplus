@@ -2,7 +2,9 @@ const Todo = require('../models/todo');
 
 // Render home page
 exports.index = (request, response) => {
-  response.render('index');
+  response.render('index', {
+    env: process.env.NODE_ENV
+  });
 };
 
 // Fetch all TODOs

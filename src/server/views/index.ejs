@@ -5,7 +5,11 @@
     <title>Vue.js • TodoMVC</title>
     <link rel="stylesheet" href="/static/todomvc/base.min.css">
     <link rel="stylesheet" href="/static/todomvc/index.min.css">
+    <% if (env === 'production') { %>
+    <link rel="stylesheet" href="/static/app.min.css">
+    <% } else { %>
     <link rel="stylesheet" href="/static/app.css">
+    <% } %>
   </head>
   <body>
     <section class="todoapp">

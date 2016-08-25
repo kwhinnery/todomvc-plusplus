@@ -98,6 +98,9 @@ module.exports = function(grunt) {
   // Default is running the local development server
   grunt.registerTask('default', ['sass:dev', 'browserify', 'concurrent:dev']);
 
+  // Build production assets
+  grunt.registerTask('dist', ['sass:dist', 'browserify']);
+
   // Custom tasks
   grunt.loadTasks('bin/tasks');
 };
