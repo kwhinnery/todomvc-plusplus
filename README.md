@@ -48,7 +48,7 @@ Next, create the development and test databases:
 
 And finally, apply the database migrations:
 
-    npm run-script migrate
+    sequelize db:migrate
     
 ### Running the application
 
