@@ -3,7 +3,6 @@ module.exports = function(grunt) {
     // Make package info available to tasks
     pkg: grunt.file.readJSON('package.json'),
 
-
     // Browserify front-end modules
     browserify: {
       options: { 
