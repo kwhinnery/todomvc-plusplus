@@ -2,8 +2,8 @@
 
 const assert = require('chai').assert;
 const Sequelize = require('sequelize');
-const db = require('../server/models/db');
-const Todo = require('../server/models/todo');
+const db = require('../models/db');
+const Todo = require('../models/todo');
 
 // reset the test database
 before(function(done) {
@@ -20,7 +20,7 @@ describe('The Todo Model', function() {
 
   it('should accept text for the TODO item', function() {
     let todoText = 'this is a super todo';
-    return Todo.create({ 
+    return Todo.create({
       body: todoText
     }).then(function(todo) {
       assert.equal(todo.body, todoText, 'Saved text should match');
