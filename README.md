@@ -46,6 +46,14 @@ Next, create the development and test databases:
     createdb todos
     createdb todos-test
 
+If Postgres is **not** installed locally, you can setup a free instance as follows:
+- visit https://elephantsql.com
+- login and setup a *free* tiny turtle instance
+- goto "Details" and copy the url. It should look something like this [postgres://abcdefg:icRAC...](https://customer.elephantsql.com/instance)
+- in the project, copy `config/test.js` to `config/user.js`
+- set `config.databaseUrl` to your copied postgres url
+- don't forget to run `sequelize db:migrate`
+
 Apply the database migrations:
 
     sequelize db:migrate
