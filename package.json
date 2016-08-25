@@ -6,7 +6,8 @@
   "scripts": {
     "test": "NODE_ENV=test mocha src/server/test",
     "start": "node bin/server.js",
-    "prestart": "sequelize db:migrate"
+    "prestart": "sequelize db:migrate",
+    "migrate": "sequelize db:migrate"
   },
   "repository": {
     "type": "git",
