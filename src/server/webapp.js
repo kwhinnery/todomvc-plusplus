@@ -22,6 +22,12 @@ if (process.env.NODE_ENV !== 'production') {
   app.use('/static', express.static(staticPath));
 }
 
+// Add the "No Shenanigans" header to all responses under the "/todos" path
+app.use('/todos', (request, response, next) => {
+  response.set('X-Shenanigans', 'None');
+  next();
+});
+
 // Mount application routes
 routes(app);
 
