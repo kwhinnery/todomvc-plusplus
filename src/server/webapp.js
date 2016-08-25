@@ -12,6 +12,11 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('x-powered-by', false);
 
+app.use('/todos', (request, response, next) => {
+  response.set('X-Shananigans', 'none');
+  next();
+});
+
 // Configure middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 
