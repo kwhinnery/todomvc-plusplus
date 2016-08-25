@@ -54,6 +54,7 @@ And finally, apply the database migrations:
 
 To run the application in development mode:
 
+    grunt collect_static
     grunt
 
 To run the application simulating production settings:
