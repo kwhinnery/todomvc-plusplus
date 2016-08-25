@@ -23,7 +23,10 @@ exports.all = (request, response) => {
 exports.update = (request, response) => {
   Todo.findById(request.param('id')).then((todo) => {
     if (!todo) return response.status(404);
-    todo.title = request.body.title;
+    todo.title = request.body.title || todo.title;
+    if (/^(true|false)$/.test(request.body.completed)) {
+      todo.completed = request.body.completed === 'true';
+    }
     return todo.save();
   }).then((todo) => {
     response.send(todo);
@@ -35,7 +38,8 @@ exports.update = (request, response) => {
 // Create a TODO
 exports.create = (request, response) => {
   Todo.create({
-    title: request.body.title
+    title: request.body.title,
+    completed: request.body.completed === 'true'
   }).then((todo) => {
     response.send(todo);
   }).catch((error) => {
