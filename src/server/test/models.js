@@ -21,9 +21,9 @@ describe('The Todo Model', function() {
   it('should accept text for the TODO item', function() {
     let todoText = 'this is a super todo';
     return Todo.create({
-      body: todoText
+      title: todoText
     }).then(function(todo) {
-      assert.equal(todo.body, todoText, 'Saved text should match');
+      assert.equal(todo.title, todoText, 'Saved text should match');
     });
   });
 
