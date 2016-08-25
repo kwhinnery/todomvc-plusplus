@@ -17,11 +17,11 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      js: {
-        files: {
-          'public/app.min.js': '<%= browserify.js.dest %>'
+        dist: {
+          files: {
+            'public/app.min.js': 'public/app.js'
+          }
         }
-      }
     },
 
     // Compile Sass stylesheets
