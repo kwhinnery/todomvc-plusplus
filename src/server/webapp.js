@@ -10,6 +10,7 @@ let app = express();
 // Configure view engine and views directory
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('x-powered-by', false);
 
 // Configure middleware
 app.use(bodyParser.urlencoded({ extended: false }));
