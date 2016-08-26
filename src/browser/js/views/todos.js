@@ -45,7 +45,7 @@ let app = {
           break;
         }
       }
-      if (!found) this.todos.push(todo);
+      if (!found) self.todos.push(todo);
     });
     todoStorage.fetch((err, todos) => {
       this.todos = todos;

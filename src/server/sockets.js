@@ -8,6 +8,5 @@ exports.init = function(_io) {
 };
 
 exports.todoAdded = function(todo) {
-  console.log(todo);
   io.emit('todoAdded', todo);
 };
