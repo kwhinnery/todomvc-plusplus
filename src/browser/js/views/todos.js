@@ -2,6 +2,7 @@
 
 const Vue = require('vue');
 const todoStorage = require('../util/store');
+let socket = io();
 
 let filters = {
   all: function (todos) {
@@ -34,6 +35,18 @@ let app = {
 
   // Initialize TODOs from database
   created() {
+    this.socket = io();
+    let self = this;
+    this.socket.on('todoAdded', function(todo) {
+      let found = false;
+      for (let t of self.todos) {
+        if (t.id == todo.id) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) self.todos.push(todo);
+    });
     todoStorage.fetch((err, todos) => {
       this.todos = todos;
     });
