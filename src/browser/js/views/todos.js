@@ -104,6 +104,13 @@ let app = {
       }
     },
 
+    complete: function (todo) {
+      todo.modified = true;
+      todoStorage.save(this.todos, function(err) {
+        if (err) console.log(err);
+      });
+    },
+
     cancelEdit: function (todo) {
       this.editedTodo = null;
       todo.title = this.beforeEditCache;
