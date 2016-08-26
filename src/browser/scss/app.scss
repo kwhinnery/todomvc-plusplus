@@ -12,4 +12,7 @@ $primary-color: #333;
 }
 .info > p {
   color: $primary-color;
+  a {
+    color: $primary-color;
+  }
 }
