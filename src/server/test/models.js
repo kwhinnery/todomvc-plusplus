@@ -20,10 +20,13 @@ describe('The Todo Model', function() {
 
   it('should accept text for the TODO item', function() {
     let todoText = 'this is a super todo';
+    let completed = false;
     return Todo.create({
-      title: todoText
+      title: todoText,
+      completed: completed
     }).then(function(todo) {
       assert.equal(todo.title, todoText, 'Saved text should match');
+      assert.equal(todo.completed, false, 'Saved text should match');
     });
   });
 
