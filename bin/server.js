@@ -10,5 +10,3 @@ let server = http.createServer(app);
 server.listen(config.port, () => {
   log(`Express server listening on port *:${config.port}`);
 });
-
-//Mean Green Submarine
