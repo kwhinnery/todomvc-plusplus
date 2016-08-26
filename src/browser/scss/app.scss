@@ -1,3 +1,15 @@
-[v-cloak] { 
-  display: none; 
+[v-cloak] {
+  display: none;
+}
+$primary-color: #333;
+
+.todoapp {
+  .todoTitle {
+    color: $primary-color;
+    text-shadow: 0 0 5px $primary-color;
+    opacity: 0.8;
+  }
+}
+.info > p {
+  color: $primary-color;
 }
