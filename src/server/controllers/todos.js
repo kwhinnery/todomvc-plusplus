@@ -1,3 +1,4 @@
+const sockets = require('../sockets');
 const Todo = require('../models/todo');
 
 // Render home page
@@ -40,6 +41,7 @@ exports.create = (request, response) => {
     title: request.body.title
   }).then((todo) => {
     response.send(todo);
+    sockets.todoAdded(todo);
   }).catch((error) => {
     response.status(500).send(error);
   });
