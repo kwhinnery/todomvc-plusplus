@@ -1,5 +1,7 @@
-var path = require('path');
-var fs = require('fs-extra');
+'use strict';
+
+const path = require('path');
+const fs = require('fs-extra');
 
 module.exports = function(grunt) {
   let log = (str) => {
@@ -11,7 +13,7 @@ module.exports = function(grunt) {
       'Initialize static asset directory with unprocessed assets',
       function(environment) {
     var publicPath = path.resolve(__dirname, '..', '..', 'public');
-    var staticPath = path.resolve(__dirname, '..', '..', 'src', 'browser', 
+    var staticPath = path.resolve(__dirname, '..', '..', 'src', 'browser',
       'static');
     fs.removeSync(publicPath);
     fs.mkdirSync(publicPath);
