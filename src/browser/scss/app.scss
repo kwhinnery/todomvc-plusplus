@@ -1,3 +1,14 @@
 [v-cloak] { 
   display: none; 
 }
+
+$featureFontColor: #999;
+
+.todoapp {
+    h1 {
+        color: $featureFontColor;
+    }
+}
+.info {
+    color: $featureFontColor;
+}
