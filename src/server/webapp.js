@@ -16,6 +16,12 @@ app.set('x-powered-by', false);
 // Configure middleware
 app.use(morgan('combined'))
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/todos', (request, response, next) => {
+  response.set({
+    'X-Shenanigans-None': 'true'
+  });
+  next();
+});
 
 // Static file serving happens everywhere but in production
 if (process.env.NODE_ENV !== 'production') {
