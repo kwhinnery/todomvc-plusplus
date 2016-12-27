@@ -15,8 +15,7 @@ module.exports = function(grunt) {
         dest: 'public/app.js'
       }
     },
-      
-      
+
     uglify: {
         dist: {
           files: {
