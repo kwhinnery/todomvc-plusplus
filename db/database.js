@@ -1,3 +1,4 @@
+'use strict'
 // Our application's configuration lives in ../config, but our database config
 // for Sequelize CLI operations lives in this file. Pull in database config 
 // from our main config - this file should never have to change.
