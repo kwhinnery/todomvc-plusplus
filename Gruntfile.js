@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+  const sass = require('node-sass');
+
   grunt.initConfig({
     // Make package info available to tasks
     pkg: grunt.file.readJSON('package.json'),
@@ -29,6 +31,7 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
+          implementation: sass,
           sourceMap: true
         },
         files: {
@@ -37,6 +40,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
+          implementation: sass,
           sourceMap: false,
           outputStyle: 'compressed'
         },
